@@ -23,7 +23,7 @@ $images = $path .'images.txt';
 
 
 if (file_exists( $file ) and file_exists($images)) {
-    echo "<h1>$this->id</h1>";
+    echo '<h1>' . utf8_decode($this->id) . '</h1>';
     $fimage = fopen($images, 'r');
     $image =  fgets($fimage);
     echo '<img src="' . $path . $image . '" alt="'. $this->id .'" style="float: left; margin-right: 10px;"/>';
