@@ -15,8 +15,17 @@ class DEHStaticViewDEHStatic extends JView
         //$model = &$this->getModel();
         //$this->msg =  $model->getMsg();
         $this->msg = $this->get('Title');
+        $this->root = JRequest::getString('folder');
         $this->folders = $this->get('Folders');
-         // Check for errors.
+        // Check for errors.
+        
+        if (JRequest::getCmd('root')) {
+            $this->root = addslashes(JRequest::getCmd('root'));
+        }
+        if (JRequest::getCmd('id')) {
+            $this->id = addslashes(JRequest::getString('id'));
+        }
+        
         if (count($errors = $this->get('Errors'))) 
         {
             JLog::add(implode('<br />', $errors), JLog::WARNING, 'jerror');

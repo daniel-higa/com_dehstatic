@@ -14,6 +14,9 @@ class DEHStaticModelDEHStatic extends JModelItem
      * @var string msg
      */
     protected $msg;
+    protected $folders;
+    protected $root;
+    
      /**
      * Get the message
      * @return string The message to be displayed to the user
@@ -29,5 +32,14 @@ class DEHStaticModelDEHStatic extends JModelItem
     
     function getFolders() {
         return getFolders(JRequest::getString('folder'));
+    }
+    
+    function getRoot() {
+        $this->root = JRequest::getString('folder');
+        return $this->root;
+    }
+    
+    function getTest() {
+        return "test string";
     }
 }
