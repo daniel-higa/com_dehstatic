@@ -25,13 +25,22 @@ class DEHStaticModelDEHStatic extends JModelItem
     {
         if (!isset($this->msg)) 
         {
-            $this->msg = JRequest::getString('title');
+            if (JRequest::getString('title')) {
+                $this->msg = JRequest::getString('title');
+            } else {
+                $this->msg = JRequest::getString('root');
+            }
         }
         return $this->msg;
     }
     
     function getFolders() {
-        return getFolders(JRequest::getString('folder'));
+        if (JRequest::getString('folder')) {
+            $this->root = JRequest::getString('folder');
+        } elseif (JRequest::getString('root')) {
+            $this->root = JRequest::getString('root');
+        }
+        return getFolders($this->root);
     }
     
     function getRoot() {
