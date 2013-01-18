@@ -5,4 +5,33 @@
                         <![CDATA[COM_DEHSTATIC_DEHSTATIC_VIEW_DEFAULT_DESC]]>
                 </message>
         </layout>
+        <fields name="request">
+            <fieldset name="request">
+                <field
+                    name="folder"
+                    type="folderlist"
+                    directory="static"
+                    default="Select a folder"
+                    label="COM_DEHSTATIC_DEHSTATIC_DIRECTORY"
+                    description="COM_DEHSTATIC_DEHSTATIC_DIRECTORY_DESC"
+                >
+                </field>
+                <field
+                    name="title"
+                    type="text"
+                    default="Title"
+                    label="COM_DEHSTATIC_DEHSTATIC_TITLE"
+                    description="COM_DEHSTATIC_DEHSTATIC_TITLE_DESC"
+                >
+                </field>
+                <field
+                    name="max_char"
+                    type="text"
+                    default="500"
+                    label="COM_DEHSTATIC_DEHSTATIC_MAX_CHAR"
+                    description="COM_DEHSTATIC_DEHSTATIC_MAX_CHAR_DESC"
+                >
+                </field>
+            </fieldset>
+        </fields>
 </metadata>

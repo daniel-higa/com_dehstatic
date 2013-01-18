@@ -10,13 +10,19 @@ jimport('joomla.application.component.view');
  */
 class DEHStaticViewDEHStatic extends JView
 {
-        // Overwriting JView display method
-        function display($tpl = null) 
+    // Overwriting JView display method
+    function display($tpl = null) {
+        //$model = &$this->getModel();
+        //$this->msg =  $model->getMsg();
+        $this->msg = $this->get('Title');
+        $this->folders = $this->get('Folders');
+         // Check for errors.
+        if (count($errors = $this->get('Errors'))) 
         {
-                // Assign data to the view
-                $this->msg = 'Hello World';
- 
-                // Display the view
-                parent::display($tpl);
+            JLog::add(implode('<br />', $errors), JLog::WARNING, 'jerror');
+            return false;
         }
+        // Display the view
+        parent::display($tpl);
+    }
 }

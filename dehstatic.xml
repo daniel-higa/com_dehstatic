@@ -9,7 +9,7 @@
         <copyright>Daniel Higa</copyright>
         <license>GPL</license>
         <!--  The version string is recorded in the components table -->
-        <version>0.0.1</version>
+        <version>0.0.3</version>
         <!-- The description is optional and defaults to the name -->
         <description>Add an static html site</description>
  
@@ -21,7 +21,10 @@
                 <filename>index.html</filename>
                 <filename>dehstatic.php</filename>
                 <filename>controller.php</filename>
+                <filename>helper.php</filename>
+                <filename>router.php</filename>
                 <folder>views</folder>
+                <folder>models</folder>
         </files>
  
         <administration>
